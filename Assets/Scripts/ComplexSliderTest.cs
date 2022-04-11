@@ -12,6 +12,8 @@ public class ComplexSliderTest : MonoBehaviour
     public Slider sliderR;
     public Slider sliderG;
     public Slider sliderB;
+    public Slider sliderX;
+    public Slider sliderY;
     private string regex = "[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)";
     private Color32 red = new Color32(255, 0, 0, 255);
     private Color32 white = new Color32(255, 255, 255, 255);
@@ -71,7 +73,17 @@ public class ComplexSliderTest : MonoBehaviour
         image.color = new Color32(red, green, current, 255);
     }
 
+    public void ChangePosX(float f)
+    {
+        float y = sliderY.value;
+        obj.transform.position = new Vector2(f, y);
+    }
 
+    public void ChangePosY(float f)
+    {
+        float x = sliderX.value;
+        obj.transform.position = new Vector2(x, f);
+    }
 
 
 
