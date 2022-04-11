@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using System;
 
 public class ComplexSliderTest : MonoBehaviour
 {
     public InputField input;
     public Slider slider;
+    public Slider sliderR;
+    public Slider sliderG;
+    public Slider sliderB;
     private string regex = "[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)";
     private Color32 red = new Color32(255, 0, 0, 255);
     private Color32 white = new Color32(255, 255, 255, 255);
@@ -19,7 +23,7 @@ public class ComplexSliderTest : MonoBehaviour
     {
         
         input.text = f.ToString();
-        //obj.transform.localScale = new Vector3(f, f, f); // pour changer la taiile, decomenter si besoin drag and drop de l'objet directement
+        //obj.transform.localScale = new Vector3(f, f, f); // pour changer la taiile, decomenter si besoin et drag and drop de l'objet directement
         
     }
 
@@ -36,6 +40,35 @@ public class ComplexSliderTest : MonoBehaviour
             image.color = red;
         }
 
+    }
+
+    public void ChangeColorR(float f)
+    {
+        Image image = obj.GetComponent<Image>();
+        byte current = Convert.ToByte(f);
+        byte green = Convert.ToByte(sliderG.value);
+        byte blue = Convert.ToByte(sliderB.value);
+        image.color = new Color32(current, green, blue, 255);
+    }
+
+
+
+    public void ChangeColorG(float f)
+    {
+        Image image = obj.GetComponent<Image>();
+        byte current = Convert.ToByte(f);
+        byte red = Convert.ToByte(sliderR.value);
+        byte blue = Convert.ToByte(sliderB.value);
+        image.color = new Color32(red, current, blue, 255);
+    }
+
+    public void ChangeColorB(float f)
+    {
+        Image image = obj.GetComponent<Image>();
+        byte current = Convert.ToByte(f);
+        byte green = Convert.ToByte(sliderG.value);
+        byte red = Convert.ToByte(sliderR.value);
+        image.color = new Color32(red, green, current, 255);
     }
 
 

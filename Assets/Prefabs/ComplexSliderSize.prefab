@@ -204,6 +204,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 2259777616343620922}
   slider: {fileID: 2259777615168663667}
+  sliderR: {fileID: 0}
+  sliderG: {fileID: 0}
+  sliderB: {fileID: 0}
   obj: {fileID: 0}
 --- !u!1 &2259777615480413170
 GameObject:
@@ -413,7 +416,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 100
+  m_Spacing: 200
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1

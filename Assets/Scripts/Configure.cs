@@ -12,6 +12,8 @@ public class Configure : MonoBehaviour
     public Slider sliderR;
     public Slider sliderG;
     public Slider sliderB;
+    public Slider sliderX;
+    public Slider sliderY;
     private Color32 red = new Color32(255, 0, 0, 255);
 
     void Start()
@@ -30,6 +32,12 @@ public class Configure : MonoBehaviour
         sliderR.value = color.r;
         sliderG.value = color.g;
         sliderB.value = color.b;
+
+        Vector2 currentPos = selectedFigure.transform.localPosition;
+        Debug.Log(currentPos.x);
+        Debug.Log(currentPos.y);
+        //sliderX.value = currentPos.x; //x - 90-905
+        //sliderY.value = currentPos.y; // y - -490-470
         Debug.Log("Figure selected");
     }
 
@@ -44,8 +52,8 @@ public class Configure : MonoBehaviour
     {
         Image image = selectedFigure.GetComponent<Image>();
         byte current = Convert.ToByte(f);
-        byte green = getIntFromSlider(sliderG);
-        byte blue = getIntFromSlider(sliderB);
+        byte green = Convert.ToByte(sliderG.value);
+        byte blue = Convert.ToByte(sliderB.value);
         image.color = new Color32(current, green, blue, 255);
     }
 
@@ -55,8 +63,8 @@ public class Configure : MonoBehaviour
     {
         Image image = selectedFigure.GetComponent<Image>();
         byte current = Convert.ToByte(f);
-        byte red = getIntFromSlider(sliderR);
-        byte blue = getIntFromSlider(sliderB);
+        byte red = Convert.ToByte(sliderR.value);
+        byte blue = Convert.ToByte(sliderB.value);
         image.color = new Color32(red, current, blue, 255);
     }
 
@@ -64,22 +72,32 @@ public class Configure : MonoBehaviour
     {
         Image image = selectedFigure.GetComponent<Image>();
         byte current = Convert.ToByte(f);
-        byte green = getIntFromSlider(sliderG);
-        byte red = getIntFromSlider(sliderR);
+        byte green = Convert.ToByte(sliderG.value);
+        byte red = Convert.ToByte(sliderR.value);
         image.color = new Color32(red, green, current, 255);
     }
 
     public void ChangeColor()
     {
-        Image image = selectedFigure.GetComponent<Image>();
-
-        //image.color = new Color(255,0,0);
+        Destroy(selectedFigure);
     }
 
     public byte getIntFromSlider(Slider s)
     {
         byte b = Convert.ToByte(s.value);
         return b;
+    }
+
+    public void ChangePosX(float f)
+    {
+        float y = sliderY.value;
+        selectedFigure.transform.position = new Vector2(f, y);
+    }
+
+    public void ChangePosY(float f)
+    {
+        float x = sliderX.value;
+        selectedFigure.transform.position = new Vector2(x, f);
     }
 
     /*
