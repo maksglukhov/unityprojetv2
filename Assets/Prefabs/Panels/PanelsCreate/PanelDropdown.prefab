@@ -1409,6 +1409,7 @@ MonoBehaviour:
   - {fileID: 3018858861988066366, guid: 140d908f3e49aaf4c9aeb9a2a5ffa51a, type: 3}
   selectedFigure: 0
   canvas: {fileID: 0}
+  dropdown: {fileID: 7639537137536064030}
   configurationPannel: {fileID: 0}
 --- !u!114 &7639537137536064036
 MonoBehaviour:
