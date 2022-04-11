@@ -9,7 +9,7 @@ public class Joystick : MonoBehaviour
     bool touchStart = false;
     public Transform Objet;
     public float speed = 10f;
-    public float offsetJoystick = 15f;
+    public float offsetJoystick = 0.5f;
     void Start()
     {
         initialPosition = transform.position;
