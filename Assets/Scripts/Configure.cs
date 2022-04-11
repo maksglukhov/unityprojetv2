@@ -36,8 +36,9 @@ public class Configure : MonoBehaviour
         Vector2 currentPos = selectedFigure.transform.localPosition;
         Debug.Log(currentPos.x);
         Debug.Log(currentPos.y);
-        //sliderX.value = currentPos.x; //x - 90-905
-        //sliderY.value = currentPos.y; // y - -490-470
+
+        sliderX.value = currentPos.x + 960f;
+        sliderY.value = currentPos.y + 540f; 
         Debug.Log("Figure selected");
     }
 
@@ -137,4 +138,6 @@ public class Configure : MonoBehaviour
         image.color = new Color32(r, g, c, 255);
     }
     */
+
+    
 }
