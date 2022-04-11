@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objet: {fileID: 0}
-  speed: 10
+  speed: 50
   offsetJoystick: 15
 --- !u!58 &194096158519656939
 CircleCollider2D:
